@@ -1,0 +1,1 @@
+html templates that work with flask go in this folder
