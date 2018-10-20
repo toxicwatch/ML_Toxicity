@@ -52,6 +52,10 @@ h2 {
     font-size: 200%;
     text-align: center;
 }
+h3 {
+    color: rgb(63, 53, 9);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
 form {
     color: rgb(63, 53, 9);
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -68,8 +72,46 @@ input {
     font-size: 16px;
     border-radius: 4px;
 }
-p {
+#one {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 16px;
+    text-align: left;
+}
+#two {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px;
+    text-align: right;
+}
+#what_is {
+    text-align: left;
+}
+#goals {
+    text-align: right;
+}
+#left {
+    float:left;
+    width: 50%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-sizing: border-box;
     text-align: center;
+}
+/* #middle {
+    float:left;
+    width: 33.3%;
+    box-sizing: border-box;
+    text-align: center;
+    
+} */
+#right {
+    float:left;
+    width: 50%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-sizing: border-box;
+    text-align: center;
+}
+footer {
+    text-align: center;
+    color: rgb(63, 53, 9);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 100%;
 }
