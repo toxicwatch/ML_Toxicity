@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Toxicwatch - Test Your Rage!</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../static/css/style.css">
     
 </head>
 
@@ -21,21 +21,35 @@
         <header class="masthead">
                 <div class="container d-flex h-100 align-items-center">
                   <div class="mx-auto text-center">
-                      <h1><img src="assets/color_logo_transparent.png" class="img-fluid" alt="" style="width: 250px; height: 300px"></h1>
+                      <h1><img src="../static/assets/color_logo_transparent.png" class="img-fluid" alt="" style="width: 250px; height: 300px"></h1>
                     <!-- <h1 class="mx-auto my-0 text-uppercase">Toxicwatch</h1> -->
                     <h2 class="text-white-50 mx-auto mt-2 mb-5">Discover the toxicity of your comments!</h2>
                   </div>
                 </div>
               </header>
-        <form action="/results" method="post">
+          
+      
+        <!-- begin new_input form -->
+          
+        <form action="" method="post">
             <fieldset>
+            <div id="ragebox">
               <legend>Test your rage here...</legend>
-              <input type="text" style="width: 950px; height: 50px"><br>
+              <input type="text" style="width: 950px; height: 50px" name="new_input" id="new_input"><br>
+            </div>   
              <br>
               <input type="submit" value="Submit">
               <input type="reset">
+            {% if count != None %}
+                <br>Your results: <br>
+                <strong>Your phrase was: </strong> {{new_input}} <br>
+                <strong>Positive Score: </strong> {{final_pos}} <br>
+                <strong>Negative Score: </strong> {{final_neg}} <br>
+            {% endif %}
             </fieldset>
           </form>
+          
+         <!-- end new_input form -->
 
         <section id="about" class="about-section text-center">
             <div class="container">
