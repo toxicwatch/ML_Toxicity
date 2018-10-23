@@ -1,0 +1,38 @@
+## Project Proposal
+'Toxicwatch': A Python Natural Language Processing web-friendly application that takes user input and determines whether or not it's 'toxic'.
+
+## Members
+Ray
+Christine
+Jason
+Joe
+
+## Description
+Using a dataset provided by Kaggle (https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/data) that lists Wikipedia comments determined to be different categories of toxic by human survey, we are making a website that recieves input in the form of a sentence and returns a determination from an algorithm that decides whether or not the new phrase is 'toxic' or not.
+
+## Tools
+Jupyter Notebook
+Numpy
+JSON
+Pandas
+Matplotlib
+Apache Spark
+
+## Sources
+
+Kaggle Challenge & Dataset
+https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/data
+
+Kaggle User Notebook -- "Stop the S@#$ - Toxic Comments EDA" by user Jagan
+https://www.kaggle.com/jagangupta/stop-the-s-toxic-comments-eda
+
+
+## Examples and Articles
+Detecting and Classifying Toxic Comments, by K. Khieu and N. Narwal, Stanford University
+https://web.stanford.edu/class/cs224n/reports/6837517.pdf
+
+Perspective API
+http://perspectiveapi.com/#/
+
+Creating a Machine Learning Web API with Flask
+https://www.wintellect.com/creating-machine-learning-web-api-flask/

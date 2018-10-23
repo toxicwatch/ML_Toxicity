@@ -1,0 +1,117 @@
+body {
+    background-image: linear-gradient(white, rgb(58, 58, 150));
+}
+/* The sidebar menu */
+.sidenav {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 120px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #111; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #818181;
+    display: block;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+/* Style page content */
+.main {
+    margin-left: 120px; /* Same as the width of the sidebar */
+    padding: 0px 10px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+h1 {
+    color: rgb(201, 172, 47);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 500%;
+    text-align: center;
+}
+h2 {
+    color: rgb(63, 53, 9);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 200%;
+    text-align: center;
+}
+h3 {
+    color: rgb(63, 53, 9);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+form {
+    color: rgb(63, 53, 9);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 160%;
+}
+input {
+    background-color: rgb(149, 166, 189); /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+}
+#one {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px;
+    text-align: left;
+}
+#two {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px;
+    text-align: right;
+}
+#what_is {
+    text-align: left;
+}
+#goals {
+    text-align: right;
+}
+#left {
+    float:left;
+    width: 50%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-sizing: border-box;
+    text-align: center;
+}
+/* #middle {
+    float:left;
+    width: 33.3%;
+    box-sizing: border-box;
+    text-align: center;
+    
+} */
+#right {
+    float:left;
+    width: 50%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-sizing: border-box;
+    text-align: center;
+}
+footer {
+    text-align: center;
+    color: rgb(63, 53, 9);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 100%;
+}
