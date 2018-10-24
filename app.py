@@ -21,6 +21,18 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
+################
+# database
+################
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get('DATABASE_URL', '') or "sqlite:///db/toxicwatch_db.db"
+db = SQLAlchemy()
+db.init_app(app)
+
+class site_inputs(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    new_input = db.Column(db.String)
+    j_is_toxic = db.Column(db.String)
+
 #################
 # flask routes
 #################
@@ -109,17 +121,29 @@ def upload_file():
         j_final_neg = neg
         
         if compound > 0:
-            is_toxic = "Nope!"
+            is_toxic = "Not Toxic!"
+            is_toxic_db = "non-toxic"
         elif compound < 0: 
             is_toxic = "Yes!"
+            is_toxic_db = "toxic"
         else:
             is_toxic = "Too neutral to tell!"
+            is_toxic_db = "neutral"
         
         ### END J-Model
         
         # START R-Model
         
         # END R-Model
+        
+        db_dict = {'new_input': new_input,
+                 'j_is_toxic': is_toxic_db
+                }
+        
+        new_info = site_inputs(**db_dict)
+        db.session.add(new_info)
+        db.session.commit()
+        
         
         return render_template('index3.html', 
                                new_input = new_input, 
