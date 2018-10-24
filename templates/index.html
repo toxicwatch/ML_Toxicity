@@ -6,16 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Toxicwatch - Test Your Rage!</title>
     <link rel="stylesheet" href="../static/css/style.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
     
 </head>
 
 <body>
-        <!-- Side navigation -->
     <div class="sidenav">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#">Services</a>
-        <a href="#roadmap">...and beyond</a>
+        <!-- <a href="index.html">Home</a> -->
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="models.html">Models</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="data.html">Data</a></li>
+        <li><a href="roadmap.html">...and beyond</a></li>
+
+        <!-- <a href="roadmap.html">...and beyond</a> -->
       </div>
       <div id="home" class="main">
         <header class="masthead">
@@ -48,61 +54,29 @@
             {% endif %}
             </fieldset>
           </form>
-          
-         <!-- end new_input form -->
+          <br><br>
+          <!-- <section id="left_chart">
+              <div id='pie_actual' class='col-lg-12' style="width:100%; height: 600px;"></div>
+      
+              </section>
+              <section id="right_chart">
+                <div id='pie_predict' class='col-lg-12' style="width:100%; height: 600px;"></div>
+                </section> -->
+                
+              </div>
+              
+              
 
-        <section id="about" class="about-section text-center">
-            <div class="container">
-                    <div class="row">
-                            <div class="col-lg-8 mx-auto">
-                              <h2 id="what_is" class="text-white mb-4">What is Toxicwatch?</h2>
-                              <p id="one" class="text-white-50">
-                                  Toxicwatch aims to save the world from the toxicity that is prevalent throughout the onine community. Starting with a fixed data set, our goal is to train a machine to monitor and determine toxicity levels of user comments across numerous platforms of internet communication.
-                                </p>
-                              <h2 id="what_is" class="text-white mb-4">Our Vision</h2>
-                              <p id="one" class="text-white-50">                                
-                                  Ultimately, we want to create a service that can scrape a user's input (online, in a game, on a forum, etc.) and determine how toxic that user's overall language is. This could be invaluable for mitigating the effect of internet trolling, cyber bullying, and toxic environments in general. In a world where so much interaction is virtual, it is important to discover ways to monitor our seemingly anonymous online behavior. 
-                              </p>
-                  
-                  
-                            </div>
-                          </div>
-            </div>
-        </section>
-        <section id="roadmap" class="about-section text-center">
-          <div class="container">
-                  <div class="row">
-                          <div class="col-lg-8 mx-auto">
-                            <h2 id="goals" class="text-white mb-4">Future Goals</h2>
-                            <p id="two" class="text-white-50">
-                                Toxicwatch aims to save the world from the toxicity that is prevalent throughout the onine community. Starting with a fixed data set, our goal is to train a machine to monitor and determine toxicity levels of user comments across numerous platforms of internet communication.
-                              </p>
-                            <!-- <h2 class="text-white mb-4">Our Vision</h2>
-                            <p id="two" class="text-white-50">                                
-                                Ultimately, we want to create a service that can scrape a user's input (online, in a game, on a forum, etc.) and determine how toxic that user's overall language is. This could be invaluable for mitigating the effect of internet trolling, cyber bullying, and toxic environments in general. In a world where so much interaction is virtual, it is important to discover ways to monitor our seemingly anonymous online behavior. 
-                            </p> -->
-                
-                
-                          </div>
-                        </div>
-          </div>
-      </section>
-                 <!-- Contact Section -->
-    <!-- <section class="contact-section bg-black"> -->
-     <!-- <section class="container">
-      <div class="row">
-        <div class="box1">.col-md-4</div>
-        <div class="box2">.col-md-4</div>
-        <div class="box3">.col-md-4</div>
-      </div>
-    </section> -->
+      
+       
+ 
     <section id="left">
       <h3>Our Team</h3>
       <p id="team">
-        Jason Diaz: <br>
-        Raymond Chan: <br>
-        Joe Marchell: <br>
-        Christine Chynoweth
+        <strong>Jason Diaz</strong>: Architect <br>
+        <strong>Raymond Chan</strong>: Data Engineer<br>
+        <strong>Joe Marchell</strong>: Machine Learning Analyst<br>
+        <strong>Christine Chynoweth</strong>: Front-End Developer
       </p>
     </section>
 
@@ -110,7 +84,7 @@
         <h3>Tools Used</h3>
         <p id="tools">
           HTML/CSS <br>
-          Spark <br>
+          Python <br>
           ML <br>
           Flask
 
@@ -129,6 +103,9 @@
     </footer>
   </section>
       
-    
+  <script type='text/javascript'src="../static/js/pie.js"></script>
+  <script type='text/javascript'src="../static/js/pie_predict.js"></script>
+
+
 </body>
 </html>
