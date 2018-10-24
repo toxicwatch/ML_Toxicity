@@ -42,8 +42,13 @@
             {% if count != None %}
                 <br>Your results: <br>
                 <strong>Your phrase was: </strong> {{new_input}} <br>
-                <strong>Positive Score: </strong> {{final_pos}} <br>
-                <strong>Negative Score: </strong> {{final_neg}} <br>
+                <strong>A-Model Positive Score: </strong> {{a_final_pos}} <br>
+                <strong>A-Model Negative Score: </strong> {{a_final_neg}} <br>
+                <strong>J-Model Compound Score: </strong> {{j_final_comp}} <br>
+                <strong>J-Model Positive Score: </strong> {{j_final_pos}} <br>
+                <strong>J-Model Negative Score: </strong> {{j_final_neg}} <br>
+                <strong>J-Model Neutral Score: </strong> {{j_final_neu}} <br>
+                <strong>Is your phrase toxic?: </strong> {{is_toxic}}
             {% endif %}
             </fieldset>
           </form>
