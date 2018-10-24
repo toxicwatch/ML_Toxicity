@@ -1,11 +1,29 @@
-from flask import Flask, render_template, flash, request
+import os
+
+# data science dependencies
+import pandas as pd
+import numpy as np
+import sqlalchemy
+from sqlalchemy.ext.automap import automap_base
+from sqlalchemy.orm import Session
+from sqlalchemy import create_engine
+
+# ML dependencies
+import nltk
 import nltk.classify.util
 from nltk.classify import NaiveBayesClassifier
 from nltk.corpus import names
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+
+# flask dependencies
+from flask import Flask, render_template, flash, request
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
-
+#################
+# flask routes
+#################
 
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
@@ -14,7 +32,7 @@ def upload_file():
         # the new phrase in the input box is assigned a variable
         new_input = request.form['new_input']
         
-        # start of algorithm
+        ### START A-Model
         def word_feats(words):
             return dict([(word, True) for word in words])
 
@@ -52,11 +70,67 @@ def upload_file():
                 print(word, 'found neu')
                 neu = neu + 1
                 
-        final_pos = float(pos)/len(words)
-        final_neg = float(neg)/len(words)
-        # end of algorithm
+        a_final_pos = float(pos)/len(words)
+        a_final_neg = float(neg)/len(words)
+        ### END A-Model
+               
+        ### START J-Model Analyzing
+        analyzer = SentimentIntensityAnalyzer()
         
-        return render_template('index3.html', new_input = new_input, final_pos = final_pos, final_neg = final_neg)
+        # Variables for holding sentiments
+        compound_list = []
+        positive_list = []
+        negative_list = []
+        neutral_list = []
+        results = []
+        # Run Vader Sentiment Analysis on Each of the comments
+
+        # Run Vader Analysis on each Sample
+        results = analyzer.polarity_scores(new_input)
+        compound = results["compound"]
+        pos = results["pos"]
+        neu = results["neu"]
+        neg = results["neg"]
+        compound_list.append(compound)
+        positive_list.append(pos)
+        negative_list.append(neg)
+        neutral_list.append(neu)
+
+        # Print Samples and Analysis
+        print(new_input)
+        print("Compound Score:", compound)
+        print("Positive Score:", pos)
+        print("Neutral Score:", neu)
+        print("Negative Score: ", neg)
+            
+        j_final_comp = compound
+        j_final_pos = pos
+        j_final_neu = neu
+        j_final_neg = neg
+        
+        if compound > 0:
+            is_toxic = "Nope!"
+        elif compound < 0: 
+            is_toxic = "Yes!"
+        else:
+            is_toxic = "Too neutral to tell!"
+        
+        ### END J-Model
+        
+        # START R-Model
+        
+        # END R-Model
+        
+        return render_template('index3.html', 
+                               new_input = new_input, 
+                               a_final_pos = a_final_pos, 
+                               a_final_neg = a_final_neg,
+                               j_final_comp = j_final_comp,
+                               j_final_pos = j_final_pos, 
+                               j_final_neu = j_final_neu, 
+                               j_final_neg = j_final_neg,
+                               is_toxic = is_toxic
+                              )
 
 
     return render_template('index3.html', count = None)
