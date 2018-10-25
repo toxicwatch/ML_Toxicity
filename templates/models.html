@@ -32,17 +32,28 @@
                             </div>
                           </div>
                         </header><br><br><br><br><br><br><br><br>
-                        <div class="row">
-                                <div class="col-lg-8 mx-auto">
+                        <!-- <div class="row"> -->
+                                <div >
                                   <h2 id="what_is" class="text-white mb-4">A Model</h2>
                                   <p id="one" class="text-white-50">
-                                      Our objective with our A-model was to classify comments based on our dictionary of toxic, non-toxic, and neutral lists. The NaiveBayes classifier was used to accomplish this task due to its ability to detect the existence or nonexistence of features for a class. But in detecting these features, it doesn't relate them to the existence or nonexistence of any other feature of a class. In summary, it is naive because it makes several assumptions about the data-set. However, this classifier was perfect since it handled such a subjective data set. In our road-map, we would like to expand our dictionary to include the different ranks of toxicity and their corresponding words.
+                                      Our objective with our A-model was to classify comments based on our dictionary of toxic classes. The NaiveBayes classifier was used to accomplish this task due to its ability to detect the existence or nonexistence of features for a class. But in detecting these features, it doesn't relate them to the existence or nonexistence of any other features of a class. In summary, it is naive because it makes several assumptions about the data-set. However, this classifier was an interesting approach due to the subjective nature of our data.
 
                                 </p>
-                                <section id="left_a_chart">
-                                    <div id='naive_pie' class='col-lg-12' style="width:100%; height: 450px;"></div>
+                                <!-- <section id="left_chart">
+                                    <div id='naive_pie' class='col-lg-12' style="width:100%; height: 500px;"></div>
                             
-                                    </section>
+                                    </section> -->
+                                    <section id="right_chart">
+                                        <div id='naive_pie_complete' class='col-lg-12' style="width:100%; height: 500px;"></div>
+                                
+                                        </section><br>
+                                        <section id="left_chart">
+                                            <div id='naive_complete' class='col-lg-12' style="width:100%; height: 500px;"></div>
+                                    
+                                            </section><br>
+                                </div><br>
+              
+                                <div >
                                   <h2 id="what_is" class="text-white mb-4">J Model</h2>
                                   <p id="one" class="text-white-50"> 
                                       The logistic regression model was used due to its response variable needing to be categorical. Our objective was to create a binary response declaring a comment as toxic or non-toxic. To achieve this, in our J-model we ran all the comments through VADER sentiment analysis to assign scores to assess the degree of positive/negative/neutral word selection within the data-set. From this, we were able to feed our logistic regression model with the independent variables as the toxic comments' compound score, negative score, neutral score, and positive score. The dependent variable was set as the Toxic column for our data-set. The target output of this model was to determine if the comment is toxic or nontoxic based on a combination of the Vader scores.
@@ -60,12 +71,12 @@
                                         </div>
                                   <h2 id="what_is" class="text-white mb-4">R Model</h2>
                                   <p id="one" class="text-white-50">  
-                                      For Linear regression we wanted to see the relation between a explanatory variable and a dependent variable.  The purpose is to be able to fit a linear equation to observe and predict data and see how one variable affects the other.  The linear regression line Y = a + bX where X is the explanatory variable and Y is the defendant variable.  In this case the “Toxic” column is Y for the dependent variable as it’s dependent on the Hash Values which represents X for the hash values.  We wanted to use this to determine a relationship exists between certain words based on how they’re hashed and whether or not the comment as a whole can be deemed toxic.                              
+                                      For Linear regression we wanted to see the relation between a explanatory variable and a dependent variable.  The purpose is to be able to fit a linear equation to observe and predict data and see how one variable affects the other.  The linear regression line Y = a + bX where X is the explanatory variable and Y is the dependant variable.  In this case the “Toxic” column is Y for the dependent variable as it’s dependent on the Hash Values which represents X for the hash values.  We wanted to use this to determine if a relationship exists between certain words based on how they’re hashed and whether or not the comment as a whole can be deemed toxic.                              
                                   </p>
                       
                       
-                                </div>
-                              </div>
+                                <!-- </div> -->
+                              
                 </div>
                        <!-- Footer -->
     <section id="footer">
@@ -81,6 +92,10 @@
                 <script type='text/javascript'src="../static/js/pie.js"></script>
                 <script type='text/javascript'src="../static/js/pie_predict.js"></script>
                 <script type='text/javascript'src="../static/js/naive_pie.js"></script>
+                <script type='text/javascript'src="../static/js/naive_pie_complete.js"></script>
+                <script type='text/javascript'src="../static/js/naive_complete.js"></script>
+
+
 
 
 </body>
