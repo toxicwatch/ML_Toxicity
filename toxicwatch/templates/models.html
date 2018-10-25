@@ -34,7 +34,7 @@
                         </header><br><br><br><br><br><br><br><br>
                         <!-- <div class="row"> -->
                                 <div >
-                                  <h2 id="what_is" class="text-white mb-4">A Model</h2>
+                                  <h2 id="what_is" class="text-white mb-4">A Model -- Naive Bayes Classification</h2>
                                   <p id="one" class="text-white-50">
                                       Our objective with our A-model was to classify comments based on our dictionary of toxic classes. The NaiveBayes classifier was used to accomplish this task due to its ability to detect the existence or nonexistence of features for a class. But in detecting these features, it doesn't relate them to the existence or nonexistence of any other features of a class. In summary, it is naive because it makes several assumptions about the data-set. However, this classifier was an interesting approach due to the subjective nature of our data.
 
@@ -54,7 +54,7 @@
                                 </div><br>
               
                                 <div >
-                                  <h2 id="what_is" class="text-white mb-4">J Model</h2>
+                                  <h2 id="what_is" class="text-white mb-4">J Model -- Vader Sentiment Analysis</h2>
                                   <p id="one" class="text-white-50"> 
                                       The logistic regression model was used due to its response variable needing to be categorical. Our objective was to create a binary response declaring a comment as toxic or non-toxic. To achieve this, in our J-model we ran all the comments through VADER sentiment analysis to assign scores to assess the degree of positive/negative/neutral word selection within the data-set. From this, we were able to feed our logistic regression model with the independent variables as the toxic comments' compound score, negative score, neutral score, and positive score. The dependent variable was set as the Toxic column for our data-set. The target output of this model was to determine if the comment is toxic or nontoxic based on a combination of the Vader scores.
                                       <br><br>
@@ -69,7 +69,7 @@
                                           </section>
                                           
                                         </div>
-                                  <h2 id="what_is" class="text-white mb-4">R Model</h2>
+                                  <h2 id="what_is" class="text-white mb-4">R Model -- Linear Regression Machine Learning</h2>
                                   <p id="one" class="text-white-50">  
                                       For Linear regression we wanted to see the relation between a explanatory variable and a dependent variable.  The purpose is to be able to fit a linear equation to observe and predict data and see how one variable affects the other.  The linear regression line Y = a + bX where X is the explanatory variable and Y is the dependant variable.  In this case the “Toxic” column is Y for the dependent variable as it’s dependent on the Hash Values which represents X for the hash values.  We wanted to use this to determine if a relationship exists between certain words based on how they’re hashed and whether or not the comment as a whole can be deemed toxic.                              
                                   </p>
