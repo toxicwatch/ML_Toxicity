@@ -82,7 +82,8 @@ def upload_file():
         
         classifier = NaiveBayesClassifier.train(train_set)
         
-        train1 = "resources/train_sentiment.csv"
+#         train1 = "resources/train_sentiment.csv"
+        train1 = "https://s3.us-east-2.amazonaws.com/toxicwatch/train_sentiment.csv"
         train_df = pd.read_csv(train1, encoding="ISO-8859-1")
         
         
