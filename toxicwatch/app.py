@@ -33,7 +33,7 @@ db.init_app(app)
 # does not work in heroku
 class site_inputs(db.Model):
     __tablename__ = 'site_inputs'
-    id = db.Column(db.Serial, primary_key=True, autoincrement=True)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     new_input = db.Column(db.Text)
     naivebayes_pos = db.Column(db.Integer)
     naivebayes_neg = db.Column(db.Integer)
