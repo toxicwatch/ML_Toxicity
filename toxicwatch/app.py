@@ -29,17 +29,18 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 db.init_app(app)
 
-class site_inputs(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    new_input = db.Column(db.String)
-    naivebayes_pos = db.Column(db.Integer)
-    naivebayes_neg = db.Column(db.Integer)
-    naivebayes_neu = db.Column(db.Integer)
-    vader_composite = db.Column(db.Integer)
-    vader_pos = db.Column(db.Integer)
-    vader_neu = db.Column(db.Integer)
-    vader_neg = db.Column(db.Integer)
-    vader_toxic = db.Column(db.String)
+# does not work in heroku
+# class site_inputs(db.Model):
+#     id = db.Column(db.Integer, primary_key=True)
+#     new_input = db.Column(db.String)
+#     naivebayes_pos = db.Column(db.Integer)
+#     naivebayes_neg = db.Column(db.Integer)
+#     naivebayes_neu = db.Column(db.Integer)
+#     vader_composite = db.Column(db.Integer)
+#     vader_pos = db.Column(db.Integer)
+#     vader_neu = db.Column(db.Integer)
+#     vader_neg = db.Column(db.Integer)
+#     vader_toxic = db.Column(db.String)
 
 #################
 # flask routes
@@ -218,20 +219,21 @@ def upload_file():
             # Machine Learning to be placed here
         # END R-Model
         
-        db_dict = {'new_input': new_input,
-                 'naivebayes_pos': a_final_pos,
-                 'naivebayes_neg': a_final_neg,
-                 'naivebayes_neu': a_final_neu,
-                 'vader_composite': j_final_comp,
-                 'vader_pos': j_final_pos,
-                 'vader_neu': j_final_neu,
-                 'vader_neg': j_final_neg,
-                 'vader_toxic': is_toxic_db
-                }
+        #does not work in heroku
+#         db_dict = {'new_input': new_input,
+#                  'naivebayes_pos': a_final_pos,
+#                  'naivebayes_neg': a_final_neg,
+#                  'naivebayes_neu': a_final_neu,
+#                  'vader_composite': j_final_comp,
+#                  'vader_pos': j_final_pos,
+#                  'vader_neu': j_final_neu,
+#                  'vader_neg': j_final_neg,
+#                  'vader_toxic': is_toxic_db
+#                 }
         
-        new_info = site_inputs(**db_dict)
-        db.session.add(new_info)
-        db.session.commit()
+#         new_info = site_inputs(**db_dict)
+#         db.session.add(new_info)
+#         db.session.commit()
         
         return render_template('index.html', 
                                new_input = new_input, 
