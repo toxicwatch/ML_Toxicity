@@ -33,17 +33,42 @@
                             <div class="col-lg-8 mx-auto">
                               <h2 id="what_is" class="text-white mb-4">Future Goals</h2>
                               <p id="one" class="text-white-50">
-                                  Toxicwatch aims to save the world from the toxicity that is prevalent throughout the onine community. Starting with a fixed data set, our goal is to train a machine to monitor and determine toxicity levels of user comments across numerous platforms of internet communication.
+                                  - Parse a chat log between at least 2 people and determine which user is the most toxic
                                 </p>
-                              <!-- <h2 id="what_is" class="text-white mb-4">Our Vision</h2>
+                                <p id="one" class="text-white-50">
+                                    - Log any series of phrases and categorize them based on their sentiment analysis -- beyond toxic or non-toxic, depending on whatever the person forking our code wants to do with our NLP algorithms                                  </p>
+                              
+                              <h2 id="what_is" class="text-white mb-4">Lessons Learned</h2>
+                              <p id="one" class="text-white-50">                                
+                                  - Data cleaning is more complicated than anticipated<br>
+                                  - How Hashing and StopWords works (NLTK/Hashlib)<br>
+                                  - Process behind Linear/Logistic Regression and modeling<br>
+                                  - Spark Vectors <br> 
+                                  - NLP and ML as two separate theories and processes are hard work!<br> 
+                                  - We were able to clean the dataset, analyze it, and break the phrases down in various ways so that they're ready to calculate by an ML model.<br> 
+                                  - We were then able to assign values to phrases and have them output weights based on VADER Sentiment Analysis, but by presentation time were unable to feed a new phrase from our website into our Machine Learning model.<br> 
+                                  - What our website accomplishes by our 10/25 presentation day is take input text, break it down into sentiment scores based on a Naive Bayes classifier and VADER Sentiment Analysis, and stores those phrases and their results into a SQLite database.<br> 
+                                  - The input data collected in the SQLite database -- hopefully collected from friends, family and colleagues who test our text box -- can then be extracted, loaded, and transformed into a dataset usable as a training set in and of itself.<br> 
+                                  - Basically, our presentation-ready application is at the least a data harvesting app.  <br>                          
+                                 </p>
+                                 <h2 id="what_is" class="text-white mb-4">Our Vision</h2>
                               <p id="one" class="text-white-50">                                
                                   Ultimately, we want to create a service that can scrape a user's input (online, in a game, on a forum, etc.) and determine how toxic that user's overall language is. This could be invaluable for mitigating the effect of internet trolling, cyber bullying, and toxic environments in general. In a world where so much interaction is virtual, it is important to discover ways to monitor our seemingly anonymous online behavior. 
-                              </p> -->
+                              </p>
                   
                   
                             </div>
                           </div>
             </div>
-    
+           <!-- Footer -->
+           <section id="footer">
+
+   
+              <footer class="bg-black small text-center text-white-50">
+                <div class="container">
+                  Copyright &copy; Coding Bootcamp 2018
+                </div>
+              </footer>
+            </section>
 </body>
 </html>
