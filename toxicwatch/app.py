@@ -24,14 +24,22 @@ app = Flask(__name__)
 ################
 # database
 ################
-app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get('DATABASE_URL', '') or "sqlite:///db/toxicwatch_db.db"
-db = SQLAlchemy()
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get('DATABASE_URL', '') or "sqlite:///db/toxicwatch_db_v2.sqlite"
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db = SQLAlchemy(app)
 db.init_app(app)
 
-# class site_inputs(db.Model):
-#     id = db.Column(db.Integer, primary_key=True)
-#     new_input = db.Column(db.String)
-#     j_is_toxic = db.Column(db.String)
+class site_inputs(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    new_input = db.Column(db.String)
+    naivebayes_pos = db.Column(db.Integer)
+    naivebayes_neg = db.Column(db.Integer)
+    naivebayes_neu = db.Column(db.Integer)
+    vader_composite = db.Column(db.Integer)
+    vader_pos = db.Column(db.Integer)
+    vader_neu = db.Column(db.Integer)
+    vader_neg = db.Column(db.Integer)
+    vader_toxic = db.Column(db.String)
 
 #################
 # flask routes
@@ -74,7 +82,7 @@ def upload_file():
         
         classifier = NaiveBayesClassifier.train(train_set)
         
-        train1 = "resources/train_sentiment.csv"
+        train1 = "toxicwatch/resources/train_sentiment.csv"
         train_df = pd.read_csv(train1, encoding="ISO-8859-1")
         
         
@@ -148,7 +156,7 @@ def upload_file():
 #         a_final_thr = float(thr)/len(words)
 #         a_final_ide = float(ide)/len(words)
 
-                
+        # 10/25/18 PROBLEM: everything from a_final_tox to a_final_ide displays 0 all the time. why?        
         a_final_pos = pos
         a_final_neg = neg
         a_final_neu = neu
@@ -209,13 +217,20 @@ def upload_file():
             # Machine Learning to be placed here
         # END R-Model
         
-#         db_dict = {'new_input': new_input,
-#                  'j_is_toxic': is_toxic_db
-#                 }
+        db_dict = {'new_input': new_input,
+                 'naivebayes_pos': a_final_pos,
+                 'naivebayes_neg': a_final_neg,
+                 'naivebayes_neu': a_final_neu,
+                 'vader_composite': j_final_comp,
+                 'vader_pos': j_final_pos,
+                 'vader_neu': j_final_neu,
+                 'vader_neg': j_final_neg,
+                 'vader_toxic': is_toxic_db
+                }
         
-#         new_info = site_inputs(**db_dict)
-#         db.session.add(new_info)
-#         db.session.commit()
+        new_info = site_inputs(**db_dict)
+        db.session.add(new_info)
+        db.session.commit()
         
         return render_template('index.html', 
                                new_input = new_input, 
@@ -263,4 +278,7 @@ def roadmap():
 
 
 if __name__ == "__main__":
-    app.run(host='localhost', debug = True) # Start the app
+#     app.run(host='localhost', debug = True) # Start the app
+    app.run(debug=True)
+    app.jinja_env.auto_reload = True
+    app.config['TEMPLATES_AUTO_RELOAD'] = True

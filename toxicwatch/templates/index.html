@@ -49,10 +49,17 @@
               <input type="reset">
             {% if count != None %}
                 <br>Your results: <br><br>
-                
                 <section id="left"><p>
-                    <strong>Your phrase was: </strong> {{new_input}} <br><br>
-                    
+                    <strong>Your phrase was: </strong> {{new_input}}<br>
+                    <strong>Is your phrase toxic?: </strong> {{is_toxic}}<br><br>
+                    <strong>J-Model Results (VADER Sentiment Analysis):</strong><br>
+                    <strong>J-Model Compound Score: </strong> {{j_final_comp}} <br>
+                    <strong>J-Model Positive Score: </strong> {{j_final_pos}} <br>
+                    <strong>J-Model Negative Score: </strong> {{j_final_neg}} <br>
+                    <strong>J-Model Neutral Score: </strong> {{j_final_neu}} <br>
+                    </p>
+                </section>                
+                <section id="right"><p><br><br><br>       
                     <strong>A-Model Results (Naive Bayes Classification):</strong><br>
                     <strong>A-Model Positive Score: </strong> {{a_final_pos}} <br>
                     <strong>A-Model Negative Score: </strong> {{a_final_neg}} <br>
@@ -65,15 +72,7 @@
                     </p>
                 </section>
                 
-                <section id="right"><p><br><br><br>
-                    <strong>J-Model Results (VADER Sentiment Analysis):</strong><br>
-                    <strong>J-Model Compound Score: </strong> {{j_final_comp}} <br>
-                    <strong>J-Model Positive Score: </strong> {{j_final_pos}} <br>
-                    <strong>J-Model Negative Score: </strong> {{j_final_neg}} <br>
-                    <strong>J-Model Neutral Score: </strong> {{j_final_neu}} <br>
-                    <strong>Is your phrase toxic?: </strong> {{is_toxic}}
-                    </p>
-                </section>
+
             {% endif %}
             </fieldset>
           </form>
