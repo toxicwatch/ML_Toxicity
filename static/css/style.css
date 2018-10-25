@@ -1,5 +1,5 @@
 body {
-    background-image: linear-gradient(white, rgb(58, 58, 150));
+    background-image: linear-gradient(white, rgb(116, 116, 172));
 }
 /* The sidebar menu */
 .sidenav {
@@ -41,32 +41,48 @@ body {
     .sidenav a {font-size: 18px;}
 }
 h1 {
-    color: rgb(63, 53, 9);
+    color: rgb(36, 30, 5);
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 300%;
     text-align: center;
 }
 h2 {
-    color: rgb(63, 53, 9);
+    color: rgb(36, 30, 5);
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 200%;
     text-align: center;
 }
 h3 {
-    color: rgb(63, 53, 9);
+    color: rgb(36, 30, 5);
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 h4 {
-    color: rgb(63, 53, 9);
+    color: rgb(36, 30, 5);
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 250%;
     text-align: left;
 }
+h5 {
+    color: rgb(36, 30, 5);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 200%;
+}
+h6 {
+    color: rgb(36, 30, 5);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 200%;
+    text-align: center;
+}
 #img2 {
     float: right;
 }
+#perspective {
+    color: rgb(36, 30, 5);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 140%;
+}
 form {
-    color: rgb(63, 53, 9);
+    color: rgb(36, 30, 5);
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 160%;
 }
@@ -94,12 +110,17 @@ td {
 }
 p {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     text-align: center;
+}
+#research_text {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px;
+    text-align: left;
 }
 #one {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     text-align: left;
 }
 #two {
@@ -144,11 +165,53 @@ p {
     float: right;
     width: 50%;
     box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0)
 
 }
+#right_names {
+    float:left;
+    width: 33.3%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-sizing: border-box;
+    text-align: center;
+}
+#left_names {
+    float:left;
+    width: 33.3%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-sizing: border-box;
+    text-align: center;
+}
+#center_pic {
+    float:left;
+    width: 33.3%;
+}
+/* #left_a_chart {
+    float:left;
+    width: 50%;
+    box-sizing: border-box;
+} */
+/* Container holding the image and the text */
+/* .container {
+    position: relative;
+    text-align: center;
+    background-color:rgba(0,0,0,0);
+} */
+/* Centered text */
+/* .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+} */
 footer {
     text-align: center;
-    color: rgb(63, 53, 9);
+    color: rgb(36, 30, 5);
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 100%;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    position:static;
+    bottom:0;
+    width:100%;
 }
