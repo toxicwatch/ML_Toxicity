@@ -50,13 +50,22 @@
                 <br>Your results: <br><br>
                 
                 <section id="left"><p>
-                    <strong>Your phrase was: </strong> {{new_input}} <br>
+                    <strong>Your phrase was: </strong> {{new_input}} <br><br>
+                    
+                    <strong>A-Model Results (Naive Bayes Classification):</strong><br>
                     <strong>A-Model Positive Score: </strong> {{a_final_pos}} <br>
                     <strong>A-Model Negative Score: </strong> {{a_final_neg}} <br>
+                    <strong>A-Model Neutral Score: </strong> {{a_final_neu}} <br>
+<!--                     <strong>A-Model Toxic Score: </strong> {{a_final_tox}} <br>
+                    <strong>A-Model Severe Score: </strong> {{a_final_sev}} <br>
+                    <strong>A-Model Obscene Score: </strong> {{a_final_obs}} <br>
+                    <strong>A-Model Threatening Score: </strong> {{a_final_thr}} <br>
+                    <strong>A-Model Identity Insult Score: </strong> {{a_final_ide}} <br> -->
                     </p>
                 </section>
                 
-                <section id="right"><p>
+                <section id="right"><p><br><br><br>
+                    <strong>J-Model Results (VADER Sentiment Analysis):</strong><br>
                     <strong>J-Model Compound Score: </strong> {{j_final_comp}} <br>
                     <strong>J-Model Positive Score: </strong> {{j_final_pos}} <br>
                     <strong>J-Model Negative Score: </strong> {{j_final_neg}} <br>
