@@ -24,7 +24,8 @@ app = Flask(__name__)
 ################
 # database
 ################
-app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get('DATABASE_URL', '') or "sqlite:///db/toxicwatch_db_v2.sqlite"
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get('DATABASE_URL', '') 
+# or "sqlite:///db/toxicwatch_db_v2.sqlite"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 db.init_app(app)
