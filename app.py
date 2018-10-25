@@ -145,7 +145,7 @@ def upload_file():
         db.session.commit()
         
         
-        return render_template('index3.html', 
+        return render_template('index.html', 
                                new_input = new_input, 
                                a_final_pos = a_final_pos, 
                                a_final_neg = a_final_neg,
@@ -157,7 +157,33 @@ def upload_file():
                               )
 
 
-    return render_template('index3.html', count = None)
+    return render_template('index.html', count = None)
+
+@app.route("/about")
+def about():
+    """Return the about page."""
+    return render_template("about.html")
+
+@app.route("/models")
+def models():
+    """Return the models page."""
+    return render_template("models.html")
+
+@app.route("/research")
+def research():
+    """Return the research page."""
+    return render_template("research.html")
+
+@app.route("/data")
+def data():
+    """Return the data page."""
+    return render_template("data.html")
+
+@app.route("/roadmap")
+def roadmap():
+    """Return the roadmap page."""
+    return render_template("roadmap.html")
+
 
 if __name__ == "__main__":
     app.run(host='localhost', debug = True) # Start the app
