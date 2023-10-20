@@ -33,7 +33,7 @@ The original conception of Toxicwatch was inspired by [Perspective API](http://p
 
 ## Results
 
-Our website is deployed on Heroku: [Toxicwatch](https://toxicwatch.herokuapp.com)
+Our website was deployed on Heroku: [Toxicwatch](https://toxicwatch.herokuapp.com) (expired in Jan. 2023)
 
 As of Version 1.0 (October 25, 2018), the website does not apply a Machine Learning model to a sentence. It does, however, make a Naive Bayes Classification and VADER Sentiment Analysis.
 
